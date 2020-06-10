@@ -1,0 +1,43 @@
+<Page>:
+    img: img
+    export: export
+    apply: apply
+    do_default_tab: False
+
+    TabbedPanelItem:
+        text: 'Apri \nImmagine'
+
+        Screen:
+            RelativeLayout:
+                Button:
+                    size_hint_x: 0.5
+                    size_hint_y: 0.5
+                    pos_hint: {"x" : 0.25, "y" : 0.25}
+                    text: 'Esplora \nFile'
+                    on_release: root.browseFiles()
+
+    TabbedPanelItem:
+        text: 'Anteprima'
+
+        Screen:
+            RelativeLayout:
+                Image:
+                    id: img
+                    pos_hint: {"x": 0.1, "y" : 0.25}
+                    size_hint_x: 0.6
+                    size_hint_y: 0.6
+                    allow_stretch: True
+                Button:
+                    id: export
+                    text: 'Esporta'
+                    size_hint_x: 0.25
+                    size_hint_y: 0.3
+                    pos_hint: {"x": 0.7, "y" : 0.6}
+                    on_release: root.Export()
+                Button:
+                    id: apply
+                    text: 'Applica \nMaschera'
+                    size_hint_x: 0.25
+                    size_hint_y: 0.25
+                    pos_hint: {'x': 0.7, 'y': 0.2}
+                    on_release: root.applyMask()
